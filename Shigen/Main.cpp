@@ -1,6 +1,36 @@
 ﻿
 # include <Siv3D.hpp> // OpenSiv3D v0.4.1
+# include <Siv3D.hpp>
+# include "Resource.h"
+# include "Clock.h"
 
+
+void Main()
+{
+	knz::Resource resource(U"Data/Resource.ini");
+	//knz::Resource resource = knz::Resource();
+	resource.saveIni(U"Data/Resource.ini");
+
+	Font font;
+	const Clock clock;
+
+	while (System::Update())
+	{
+		ClearPrint();
+		Print << resource;
+		Print << U"now:" << DateTime::Now().format();
+		Print << U"timeStamp:" << resource.getTimeStamp().format();
+
+		if (MouseL.down())
+		{
+			resource.update();
+		}
+
+		clock.draw(10, 400);
+	}
+}
+
+/*
 void Main()
 {
 	// 背景を水色にする
@@ -41,6 +71,7 @@ void Main()
 		}
 	}
 }
+*/
 
 //
 // = アドバイス =

@@ -228,6 +228,11 @@
       <FileType>Document</FileType>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Clock.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Utility.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
