@@ -9,13 +9,14 @@ void Main()
 {
 	knz::Resource resource(U"Data/Resource.ini");
 	//knz::Resource resource = knz::Resource();
-	resource.saveIni(U"Data/Resource.ini");
+	//resource.saveIni(U"Data/Resource.ini");
 
 	Font font;
 	const Clock clock;
 
 	while (System::Update())
 	{
+
 		ClearPrint();
 		Print << resource;
 		Print << U"now:" << DateTime::Now().format();
